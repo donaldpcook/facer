@@ -27,6 +27,13 @@
     "browserify": "~6.2.0",
     "gulp-notify": "~2.0.1",
     "vinyl-source-stream": "~1.0.0",
-    "gulp-autoprefixer": "~1.0.1"
+    "gulp-autoprefixer": "~1.0.1",
+    "reactify": "~0.15.2"
+  },
+  "dependencies": {
+    "underscore": "~1.7.0",
+    "backbone": "~1.1.2",
+    "react": "~0.12.0",
+    "jquery": "~2.1.1"
   }
 }

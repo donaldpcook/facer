@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     tinylr = require('tiny-lr'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
+    reactify = require('reactify'),
     sass = require('gulp-ruby-sass'),
     prefix = require('gulp-autoprefixer');
 
@@ -33,6 +34,7 @@ gulp.task('browserify', function() {
     entries: ['./app/js/app.js'],
     debug: true
   })
+  .transform(reactify)
   .bundle()
   .on('error', handleErrors)
   .pipe(source('app.js'))
@@ -46,6 +48,7 @@ gulp.task('lr', function() {
 gulp.task('serve', function() {
   connect()
     .use(connectLivereload())
+    .use('/auth', serveStatic('dest'))
     .use(serveStatic('dest'))
     .listen(3000);
 });
